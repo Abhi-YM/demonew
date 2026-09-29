@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration - Online Bookstore</title>
+<style>
+/* Define your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* ... (CSS styles for your page) ... */
+</style>
+</head>
+<body>
+
+<div id="header">
+    <!-- Header content -->
+</div>
+
+<div id="menu">
+    <!-- Menu content -->
+</div>
+
+<div id="content">
+
+    <h2>Registration Form</h2>
+
+    <div class="registration-form">
+
+        <form action="#" method="post" onsubmit="return validateForm()">
+
+            <!-- Name field -->
+            <label for="name">Name:</label>
+
+            <input type="text" id="name" name="name" required>
+
+            <span id="nameError" class="error"></span>
+
+            <!-- Password field -->
+
+            <label for="password">Password:</label>
+
+            <input type="password" id="password" name="password" required>
+
+            <span id="passwordError" class="error"></span>
+
+            <!-- Other form fields -->
+
+            <!-- ... (Other form fields) ... -->
+
+            <input type="submit" value="Register">
+
+        </form>
+
+    </div>
+</div>
+
+<div id="footer">
+
+    &copy; 2023 Online Bookstore
+
+</div>
+
+<script>
+
+function validateForm() {
+
+    var nameInput = document.getElementById("name");
+    var passwordInput = document.getElementById("password");
+    var nameError = document.getElementById("nameError");
+    var passwordError = document.getElementById("passwordError");
+
+    // Reset error messages
+
+    nameError.textContent = "";
+    passwordError.textContent = "";
+
+    // Validate Name (contains alphabets and length >= 6)
+
+    var name = nameInput.value.trim();
+
+    if (!/^[a-zA-Z]+$/.test(name) || name.length < 6) {
+
+        nameError.textContent = "Name should contain alphabets and be at least 6 characters long.";
+
+        nameInput.focus();
+
+        return false;
+    }
+
+    // Validate Password (length >= 6)
+
+    var password = passwordInput.value.trim();
+
+    if (password.length < 6) {
+
+        passwordError.textContent = "Password should be at least 6 characters long.";
+
+        passwordInput.focus();
+
+        return false;
+    }
+
+    // Continue with form submission if all validations pass
+
+    return true;
+
+}
+
+</script>
+</body>
+
+</html>
